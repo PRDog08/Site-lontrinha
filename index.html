@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Minha Lontrinha 💖</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hearts-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .heart {
+      position: absolute;
+      color: pink;
+      font-size: 24px;
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts-container" id="hearts-container"></div>
+
+  <header>
+    <h1>Feliz Dia dos Namorados Minha Lontrinha! 💘</h1>
+    <p>Você é a razão do meu sorriso. Eu te amo!</p>
+  </header>
+
+  <section>
+    <h2>Nossa História</h2>
+    <p>
+      Desde que nossos caminhos se cruzaram, minha vida ganhou cor, amor e propósito.
+      Obrigado por ser minha parceira, minha melhor amiga e o amor da minha vida.
+    </p>
+  </section>
+
+  <section class="galeria">
+    <h2>Momentos que guardo no coração</h2>
+    <div class="fotos">
+      <img src="Foto1.jpg" alt="Foto 1">
+      <img src="foto3.jpg" alt="Foto 2">
+      <img src="foto4.jpg" alt="Foto 3">
+    </div>
+  </section>
+
+  <section>
+    <h2>Carta para Você 💌</h2>
+    <p>
+      Meu amor, não existem palavras suficientes para dizer o quanto você é especial para mim. Mesmo nos dias difíceis, 
+      mesmo com o mundo correndo, meu amor por você nunca para de crescer. Obrigado por tudo que você é.
+      Estou aqui por você, sempre. Feliz Dia dos Namorados!
+    </p>
+  </section>
+
+  <section class="botao">
+    <button onclick="mostrarMensagem()">Clique aqui ❤️</button>
+    <p id="mensagem"></p>
+  </section>
+
+  <footer>
+    <p>Com amor eterno do seu seboso para você, minha Lontrinha – 12 de Junho de 2025 🌹</p>
+  </footer>
+
+  <script>
+    function mostrarMensagem() {
+      document.getElementById('mensagem').innerText = "Você é o amor da minha vida. Nunca se esqueça disso. ❤️";
+    }
+  </script>
+
+  <script>
+    const heartsContainer = document.getElementById('hearts-container');
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }, 500);
+  </script>
+</body>
+</html>
